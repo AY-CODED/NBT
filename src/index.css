@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+
+.card-border {
+  position: relative;
+  padding: 2px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card-border::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: conic-gradient(
+    from 0deg,
+    #00f7ff,
+    #7b61ff,
+    #ff00ff,
+    #00f7ff
+  );
+  animation: rotateBorder 4s linear infinite;
+  z-index: 0;
+}
+
+.card-border > div {
+  position: relative;
+  z-index: 1;
+  border-radius: 12px;
+}
+
+@keyframes rotateBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
